@@ -217,17 +217,16 @@
             }
         }
 
-        // LÓGICA DIRECTA: Cierra la cuenta activa de Google y fuerza la pantalla de login con otra cuenta
         function ingresarAlHub() {
-            // 1. Abrimos el ERP en una pestaña limpia
-            const urlERP = "https://entalpia-erp-770607217265.us-west2.run.app/";
-            window.open(urlERP, '_blank');
-            
-            // 2. Enviamos la pestaña actual a la URL de cierre de sesión e inicio de Google apuntando a tu Central
+            // URL oficial de Google para elegir/cambiar de cuenta directamente apuntando a tu Central
             const urlCentral = "https://workspace-central-google-entalp-a-770607217265.us-west2.run.app/";
+            const urlGoogleCambioCuenta = "https://accounts.google.com/AccountChooser?continue=" + encodeURIComponent(urlCentral);
             
-            // Esta URL de Google desconecta al usuario actual y lo manda directo a elegir cuenta para entrar a tu app
-            window.location.href = "https://accounts.google.com/Logout?continue=" + encodeURIComponent("https://accounts.google.com/AccountChooser?continue=" + urlCentral);
+            // 1. Abre el selector de cuentas de Google en una nueva pestaña
+            window.open(urlGoogleCambioCuenta, '_blank');
+            
+            // 2. Cierra inmediatamente esta pestaña actual (la de GitHub)
+            window.close();
         }
     </script>
 
