@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ind. I.A.Col - Hub de Ingeniería</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
-        /* Estilos generales inspirados en GitHub Dark */
+        /* Colores oficiales del tema oscuro de GitHub */
         body {
             background-color: #0d1117;
             color: #c9d1d9;
@@ -25,21 +25,6 @@
             max-width: 1012px;
             margin: 40px auto;
             padding: 0 16px;
-        }
-        .btn-github {
-            background-color: #238636;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-        .btn-github:hover {
-            background-color: #2ea44f;
         }
         .tab {
             background: none;
@@ -61,6 +46,7 @@
         .content-section {
             margin-top: 20px;
         }
+        /* Estilos para las tarjetas y botones de acción */
         .card {
             background-color: #161b22;
             padding: 16px;
@@ -98,11 +84,27 @@
 </head>
 <body>
 
+    <div id="g_id_onload"
+         data-client_id="928121623044-mmei9r4ki2152b1naebfvq75fh3eso0m.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_select="false"
+         data-select_account="true"
+         data-close_on_tap_outside="false">
+    </div>
+
     <div class="navbar">
         <div style="font-weight: 600; color: #f0f6fc;">🤖 Ind. I.A.Col / Pioneer's Hub</div>
         <div>
-            <!-- Botón principal de acceso -->
-            <button class="btn-github" onclick="ingresarAlHub()">Ingresar al Hub</button>
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="continue_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
         </div>
     </div>
 
@@ -117,50 +119,92 @@
             <button id="tab-idi" class="tab" onclick="switchTab('idi')">🔬 I+D+i</button>
         </div>
 
-        <!-- Secciones de Contenido -->
         <div id="acerca" class="content-section">
             <div style="background-color: #161b22; padding: 24px; border: 1px solid #30363d; border-radius: 6px;">
                 <h2 style="margin-top: 0; color: #f0f6fc; font-size: 20px;">Ind. I.A.Col</h2>
-                <p style="line-height: 1.6; margin-bottom: 0;">Organización de ingeniería de vanguardia dedicada a la investigación, desarrollo e innovación (I+D+i). El Hub es la puerta de entrada para transformar la industria mediante IA y herramientas especializadas.</p>
+                <p style="line-height: 1.6; margin-bottom: 0;">Somos una organización de ingeniería de vanguardia dedicada a la investigación, desarrollo e innovación (I+D+i). El **Hub de Ingeniería Pioneer's** es nuestra plataforma central: la puerta de entrada para ingenieros que buscan transformar la industria mediante el uso de inteligencia artificial avanzada y herramientas de software especializado.</p>
             </div>
         </div>
 
         <div id="brochure" class="content-section" style="display:none;">
+            <h3 style="color: #f0f6fc; font-size: 18px; margin-bottom: 16px;">Beneficios de Pertenecer al Hub</h3>
+            
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                 <div class="card">
-                    <h4 style="margin-top: 0; color: #58a6ff;">💼 Workspace Corporativo</h4>
-                    <p style="font-size: 14px; color: #8b949e;">Entorno digital potenciado con herramientas de Google Workspace.</p>
+                    <div>
+                        <h4 style="margin-top: 0; color: #58a6ff;">💼 Entorno Digital Potenciado</h4>
+                        <p style="font-size: 14px; color: #8b949e; margin-bottom: 0;">Acceso a una cuenta corporativa respaldada por la suite de Google Workspace y almacenamiento de alta capacidad en la nube.</p>
+                        <div id="text-c1" class="more-text">
+                            <p style="font-size: 14px; color: #8b949e; margin-top: 0;">Este entorno garantiza la continuidad de tus proyectos, copias de seguridad automáticas y herramientas colaborativas empresariales en tiempo real.</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
+                        <a href="https://workspace.google.com" target="_blank" class="btn-secondary">Saber más</a>
                         <button onclick="toggleText('text-c1', this)" class="btn-secondary">Leer más</button>
                     </div>
-                    <div id="text-c1" class="more-text">
-                        <p style="font-size: 13px;">Garantiza colaboración en tiempo real y seguridad de datos.</p>
-                    </div>
                 </div>
+
                 <div class="card">
-                    <h4 style="margin-top: 0; color: #58a6ff;">🧪 Software ENTALPÍA</h4>
-                    <p style="font-size: 14px; color: #8b949e;">Herramientas propietarias de simulación y cálculo técnico.</p>
+                    <div>
+                        <h4 style="margin-top: 0; color: #58a6ff;">📊 Gestión de Proyectos (ERP)</h4>
+                        <p style="font-size: 14px; color: #8b949e; margin-bottom: 0;">Plataforma ERP integrada para la administración, seguimiento de hitos y control de desarrollos.</p>
+                        <div id="text-c2" class="more-text">
+                            <p style="font-size: 14px; color: #8b949e; margin-top: 0;">Permite la asignación eficiente de recursos, diagramas de Gantt dinámicos y reportes automáticos de rendimiento para el equipo de ingenieros.</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
+                        <a href="#" class="btn-secondary">Saber más</a>
                         <button onclick="toggleText('text-c2', this)" class="btn-secondary">Leer más</button>
                     </div>
-                    <div id="text-c2" class="more-text">
-                        <p style="font-size: 13px;">Modeladores de flujo y calculadoras termodinámicas avanzadas.</p>
+                </div>
+
+                <div class="card" style="grid-column: span 2;">
+                    <div>
+                        <h4 style="margin-top: 0; color: #58a6ff;">🧪 Suite de Software ENTALPÍA</h4>
+                        <p style="font-size: 14px; color: #8b949e; margin-bottom: 0;">Acceso exclusivo a nuestras herramientas propietarias de simulación y cálculo técnico avanzado.</p>
+                        <div id="text-c3" class="more-text">
+                            <ul style="font-size: 14px; margin-top: 8px; padding-left: 20px; color: #c9d1d9;">
+                                <li>🔄 <strong>Modeladores de flujo:</strong> Simulación de dinámicas y fluidos en entornos virtuales industriales.</li>
+                                <li>🧮 <strong>Calculadoras especializadas:</strong> Algoritmos de resolución matemática para problemas termodinámicos complejos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Saber más</a>
+                        <button onclick="toggleText('text-c3', this)" class="btn-secondary">Leer más</button>
+                    </div>
+                </div>
+
+                <div class="card" style="grid-column: span 2;">
+                    <div>
+                        <h4 style="margin-top: 0; color: #58a6ff;">🧠 Plan de Fortalecimiento e I+D+i Basado en I.A.</h4>
+                        <p style="font-size: 14px; color: #8b949e; margin-bottom: 0;">Programas de capacitación técnica continua e investigación profunda en principios de ingeniería.</p>
+                        <div id="text-c4" class="more-text">
+                            <p style="font-size: 14px; color: #8b949e; margin-top: 0;">Estudios avanzados enfocados en termodinámica básica y procesos industriales. Todo el ecosistema está asistido y optimizado por inteligencias artificiales entrenadas específicamente para el sector de la ingeniería moderna.</p>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Saber más</a>
+                        <button onclick="toggleText('text-c4', this)" class="btn-secondary">Leer más</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="foro" class="content-section" style="display:none;">
-            <p>Acceso restringido. Por favor, ingresa al Hub para participar en las discusiones.</p>
+            <h2>Foro de Ingenieros</h2>
+            <p>Espacio de discusión técnica restringido para miembros.</p>
         </div>
 
         <div id="idi" class="content-section" style="display:none;">
-            <p>Proyectos de investigación y desarrollo asistidos por inteligencia artificial.</p>
+            <h2>Investigación, Desarrollo e Innovación</h2>
+            <p>Proyectos científicos y tecnológicos en marcha.</p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    
     <script>
-        // Lógica de navegación de pestañas
         function switchTab(sectionId) {
             document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
@@ -168,7 +212,6 @@
             document.getElementById('tab-' + sectionId).classList.add('active');
         }
 
-        // Lógica para expandir texto
         function toggleText(textId, button) {
             const textElement = document.getElementById(textId);
             if (textElement.style.display === "block") {
@@ -180,24 +223,31 @@
             }
         }
 
-        /**
-         * Función Integrada: Ingresar al Hub
-         * Esta versión utiliza 'prompt=select_account' para forzar a Google 
-         * a mostrar el panel de selección de cuenta.
-         */
-        function ingresarAlHub() {
-            // Tu URL de destino en Cloud Run
-            const urlDestino = "https://workspace-central-google-entalp-a-770607217265.us-west2.run.app/";
-            
-            // Construcción de la URL de autenticación de Google con selector de cuenta forzado
-            const urlGoogleAuth = "https://accounts.google.com/v3/signin/identifier?" + 
-                                 "continue=" + encodeURIComponent(urlDestino) + 
-                                 "&prompt=select_account" + // <-- Esto fuerza el panel de cambio de cuenta
-                                 "&flowName=GlifWebSignIn" + 
-                                 "&flowEntry=AddSession";
+        function handleCredentialResponse(response) {
+            try {
+                const usuario = jwt_decode(response.credential);
+                const correo = usuario.email;
+                const nombre = usuario.name;
+                
+                if (correo.endsWith("@desarrollosdeia.org")) {
+                    alert(`¡Autenticación exitosa, Ing. ${nombre}!\nConectando con tus entornos en Cloud Run de forma segura...`);
+                    
+                    // Pasamos la variable de cuenta activa de Google mediante parámetros autorizados en la URL
+                    const parametroDeFuerza = "?authuser=" + encodeURIComponent(correo);
+                    
+                    const urlERP = "https://entalpia-erp-770607217265.us-west2.run.app/" + parametroDeFuerza;
+                    const urlCentral = "https://workspace-central-google-entalp-a-770607217265.us-west2.run.app/" + parametroDeFuerza;
+                    
+                    window.open(urlERP, '_blank');
+                    window.location.href = urlCentral;
 
-            // Redirigir al usuario
-            window.location.href = urlGoogleAuth;
+                } else {
+                    alert(`Acceso Denegado.\nEl correo ${correo} no pertenece a la organización desarrollosdeia.org.\n\nPor favor, selecciona tu cuenta Pioneer corporativa.`);
+                }
+            } catch (error) {
+                console.error("Error al decodificar el token de Google:", error);
+                alert("Ocurrió un error al procesar el inicio de sesión. Inténtalo de nuevo.");
+            }
         }
     </script>
 
