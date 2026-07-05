@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Ind. I.A.Col - Hub de Ingeniería</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
         /* Colores oficiales del tema oscuro de GitHub */
         body {
@@ -25,6 +24,20 @@
             max-width: 1012px;
             margin: 40px auto;
             padding: 0 16px;
+        }
+        .btn-github {
+            background-color: #238636;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+        .btn-github:hover {
+            background-color: #2ea44f;
         }
         .tab {
             background: none;
@@ -84,27 +97,10 @@
 </head>
 <body>
 
-    <div id="g_id_onload"
-         data-client_id="928121623044-mmei9r4ki2152b1naebfvq75fh3eso0m.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="handleCredentialResponse"
-         data-auto_select="false"
-         data-select_account="true"
-         data-close_on_tap_outside="false">
-    </div>
-
     <div class="navbar">
         <div style="font-weight: 600; color: #f0f6fc;">🤖 Ind. I.A.Col / Pioneer's Hub</div>
         <div>
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-shape="rectangular"
-                 data-theme="outline"
-                 data-text="continue_with"
-                 data-size="large"
-                 data-logo_alignment="left">
-            </div>
+            <button class="btn-github" onclick="ingresarAlHub()">Ingresar al Hub</button>
         </div>
     </div>
 
@@ -202,8 +198,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
-    
     <script>
         function switchTab(sectionId) {
             document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
@@ -223,31 +217,17 @@
             }
         }
 
-        function handleCredentialResponse(response) {
-            try {
-                const usuario = jwt_decode(response.credential);
-                const correo = usuario.email;
-                const nombre = usuario.name;
-                
-                if (correo.endsWith("@desarrollosdeia.org")) {
-                    alert(`¡Autenticación exitosa, Ing. ${nombre}!\nConectando con tus entornos en Cloud Run de forma segura...`);
-                    
-                    // Pasamos la variable de cuenta activa de Google mediante parámetros autorizados en la URL
-                    const parametroDeFuerza = "?authuser=" + encodeURIComponent(correo);
-                    
-                    const urlERP = "https://entalpia-erp-770607217265.us-west2.run.app/" + parametroDeFuerza;
-                    const urlCentral = "https://workspace-central-google-entalp-a-770607217265.us-west2.run.app/" + parametroDeFuerza;
-                    
-                    window.open(urlERP, '_blank');
-                    window.location.href = urlCentral;
-
-                } else {
-                    alert(`Acceso Denegado.\nEl correo ${correo} no pertenece a la organización desarrollosdeia.org.\n\nPor favor, selecciona tu cuenta Pioneer corporativa.`);
-                }
-            } catch (error) {
-                console.error("Error al decodificar el token de Google:", error);
-                alert("Ocurrió un error al procesar el inicio de sesión. Inténtalo de nuevo.");
-            }
+        // LÓGICA DIRECTA: Cierra la cuenta activa de Google y fuerza la pantalla de login con otra cuenta
+        function ingresarAlHub() {
+            // 1. Abrimos el ERP en una pestaña limpia
+            const urlERP = "https://entalpia-erp-770607217265.us-west2.run.app/";
+            window.open(urlERP, '_blank');
+            
+            // 2. Enviamos la pestaña actual a la URL de cierre de sesión e inicio de Google apuntando a tu Central
+            const urlCentral = "https://workspace-central-google-entalp-a-770607217265.us-west2.run.app/";
+            
+            // Esta URL de Google desconecta al usuario actual y lo manda directo a elegir cuenta para entrar a tu app
+            window.location.href = "https://accounts.google.com/Logout?continue=" + encodeURIComponent("https://accounts.google.com/AccountChooser?continue=" + urlCentral);
         }
     </script>
 
