@@ -201,6 +201,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    
     <script>
         function switchTab(sectionId) {
             document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
@@ -220,15 +222,34 @@
             }
         }
 
-        // Función encargada de recibir la respuesta segura de Google
+        // FUNCIÓN REAL: Procesa la credencial devuelta por Google
         function handleCredentialResponse(response) {
-            // Aquí Google nos devuelve un token seguro (JWT) en 'response.credential'
-            console.log("Token JWT recibido de Google: " + response.credential);
-            
-            // Lógica técnica posterior: 
-            // 1. Decodificar el token para extraer el correo electrónico del usuario.
-            // 2. Validar mediante JavaScript si el dominio del correo termina en tu Workspace oficial.
-            alert("¡Autenticación con Google iniciada con éxito! Próximo paso: Vincular las credenciales en la consola de Google Cloud.");
+            try {
+                // Decodificamos el token JWT recibido de Google para extraer los datos del usuario
+                const usuario = jwt_decode(response.credential);
+                
+                console.log("Datos del Ingeniero:", usuario);
+                
+                const correo = usuario.email;
+                const nombre = usuario.name;
+                
+                // VALIDACIÓN: Verificamos si el correo pertenece a tu dominio de Workspace
+                if (correo.endsWith("@desarrollosdeia.org")) {
+                    alert(`¡Bienvenido al Hub, Ing. ${nombre}!\nAcceso concedido con la cuenta: ${correo}`);
+                    
+                    // Aquí cambiaremos el estado de la página para mostrar las pestañas protegidas
+                    document.getElementById('foro').innerHTML = `<h2>💬 Foro de Ingenieros</h2><p>Bienvenido ${nombre}. Aquí puedes interactuar con el equipo.</p>`;
+                    document.getElementById('idi').innerHTML = `<h2>🔬 I+D+i</h2><p>Acceso concedido a los modeladores y calculadoras de ENTALPÍA para ${correo}.</p>`;
+                    
+                    switchTab('foro'); // Redirige automáticamente al Foro una vez logueado
+                } else {
+                    // Si el usuario inicia sesión con un Gmail común u otra empresa, se le deniega el acceso
+                    alert(`Acceso Denegado.\nEl correo ${correo} no pertenece a la organización desarrollosdeia.org.\n\nPor favor, usa tu cuenta Pioneer corporativa.`);
+                }
+            } catch (error) {
+                console.error("Error al decodificar el token de Google:", error);
+                alert("Ocurrió un error al procesar el inicio de sesión. Inténtalo de nuevo.");
+            }
         }
     </script>
 
