@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entalpia_Markdown.md</title>
+    <style>
+        /* Estilos puramente inspirados en el tema oscuro de GitHub (GitHub Dark) */
+        :root {
+            --color-canvas-default: #0d1117;
+            --color-canvas-subtle: #161b22;
+            --color-border-default: #30363d;
+            --color-fg-default: #e6edf3;
+            --color-neutral-muted: rgba(110,118,129,0.4);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--color-fg-default);
+            background-color: var(--color-canvas-default);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Contenedor principal que emula la vista de archivo en GitHub */
+        .github-box {
+            max-width: 1012px;
+            margin: 0 auto;
+            border: 1px solid var(--color-border-default);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        /* Barra superior del archivo (File Header) */
+        .github-box-header {
+            padding: 16px;
+            background-color: var(--color-canvas-subtle);
+            border-bottom: 1px solid var(--color-border-default);
+            font-family: ui-monospace, SFMono-Regular, SF Pro Mono, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+            font-size: 14px;
+            color: var(--color-fg-default);
+            font-weight: 600;
+        }
+
+        /* Cuerpo del contenido (Rendered Markdown) */
+        .markdown-body {
+            padding: 45px;
+            background-color: var(--color-canvas-default);
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 16px;
+            }
+        }
+
+        /* Tipografía y elementos Markdown al estilo GitHub */
+        .markdown-body h1 {
+            font-size: 2em;
+            font-weight: 600;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .markdown-body h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .markdown-body h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .markdown-body p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--color-fg-default);
+        }
+
+        .markdown-body strong {
+            font-weight: 600;
+        }
+
+        .markdown-body em {
+            font-style: italic;
+        }
+
+        .markdown-body hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: var(--color-border-default);
+            border: 0;
+        }
+
+        .markdown-body ul {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+            list-style-type: disc;
+        }
+
+        .markdown-body li {
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+        }
+
+        /* Estilo para texto marcado como código inline (ej: `código`) */
+        .markdown-body code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: var(--color-neutral-muted);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Pro Mono, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
+        /* Blockquotes al estilo GitHub */
+        .markdown-body blockquote {
+            padding: 0 1em;
+            color: #8b949e;
+            border-left: .25em solid #30363d;
+            margin: 0 0 16px 0;
+        }
+
+        /* Tablas al estilo GitHub Dark */
+        .markdown-body table {
+            display: block;
+            width: 100%;
+            width: max-content;
+            max-width: 100%;
+            overflow: auto;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .markdown-body table th {
+            font-weight: 600;
+            background-color: var(--color-canvas-subtle);
+        }
+
+        .markdown-body table th,
+        .markdown-body table td {
+            padding: 6px 13px;
+            border: 1px solid var(--color-border-default);
+        }
+
+        .markdown-body table tr {
+            background-color: var(--color-canvas-default);
+            border-top: 1px solid var(--color-border-default);
+        }
+
+        .markdown-body table tr:nth-child(2n) {
+            background-color: var(--color-canvas-subtle);
+        }
+
+        /* Enlaces */
+        .markdown-body a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+
+        /* Imágenes de badges */
+        .markdown-body img {
+            max-width: 100%;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="github-box">
+    <div class="github-box-header">
+        ENTALPIA.md
+    </div>
+    
+    <div class="markdown-body">
+        <h1>🔥 ENTALPIA</h1>
+        <blockquote>
+            <p><strong>Streaming de Ingeniería y Conocimiento Especializado</strong></p>
+        </blockquote>
+        
+        <p>
+            <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version"> 
+            <img src="https://img.shields.io/badge/status-online-green.svg" alt="Status"> 
+            <img src="https://img.shields.io/badge/focus-Gas_&_Combustion-orange.svg" alt="Industry">
+        </p>
+        
+        <h2>📖 ¿Qué es ENTALPIA?</h2>
+        
+        <p><strong>ENTALPIA</strong> es una plataforma integral basada en la nube que revoluciona el acceso a la ingeniería especializada. Funcionamos como un servicio de <em>streaming</em> de herramientas técnicas, eliminando la necesidad de instalaciones locales costosas y permitiendo el acceso instantáneo a software de alto nivel.</p>
+        
+        <p>Nuestro núcleo se especializa en **Sistemas de Combustión** y **Redes de Suministro de Gas**, proporcionando soluciones tanto para el ingeniero en campo que necesita cálculos precisos, como para el docente que busca recursos pedagógicos de vanguardia.</p>
+        
+        <hr>
+        
+        <h2>🚀 Módulos Principales</h2>
+        
+        <h3>1. 🛠️ Ingeniería y Simulación</h3>
+        <p>Herramientas de cálculo complejo y modelado en tiempo real accesibles desde cualquier navegador:</p>
+        <ul>
+            <li><strong>Modeladores de Redes:</strong> Diseño y verificación de redes de gas (tuberías, reguladores, medidores).</li>
+            <li><strong>Simuladores de Combustión:</strong> Análisis termodinámico, eficiencia de quemadores y comportamiento de gases.</li>
+            <li><strong>Calculadoras Técnicas:</strong> Conversiones másicas/volumétricas, pérdidas de carga y dimensionamiento inmediato.</li>
+        </ul>
+        
+        <h3>2. 🧠 Consultoría Asistida</h3>
+        <p>Un sistema de soporte técnico avanzado para la toma de decisiones:</p>
+        <ul>
+            <li>Acceso a normativas vigentes y estándares internacionales.</li>
+            <li>Asistente virtual especializado para consultas sobre seguridad, mantenimiento y operación.</li>
+            <li>Diagnóstico de fallas basado en parámetros operativos.</li>
+        </ul>
+        
+        <h3>3. 🎓 Recursos para Docentes Independientes</h3>
+        <p>Potenciamos a los educadores freelance con herramientas listas para usar:</p>
+        <ul>
+            <li><strong>Laboratorios Virtuales:</strong> Permite a tus estudiantes interactuar con sistemas de gas sin riesgos físicos.</li>
+            <li><strong>Material Didáctico:</strong> Presentaciones dinámicas, gráficas y casos de estudio reales para enriquecer tus clases.</li>
+            <li><strong>Pizarras Interactivas:</strong> Integradas con nuestras calculadoras para demostraciones en vivo.</li>
+        </ul>
+        
+        <h3>4. 📚 Planes de Formación y Reentrenamiento</h3>
+        <p>Soluciones educativas para empresas y profesionales:</p>
+        <ul>
+            <li>Cursos de actualización normativa y técnica.</li>
+            <li>Módulos de reentrenamiento para certificación de competencias.</li>
+            <li>Seguimiento de progreso y evaluación automatizada.</li>
+        </ul>
+        
+        <h3>5. 🏗️ ERP y Gestion de Proyectos</h3>
+        <p>Soluciones educativas para empresas y profesionales:</p>
+        <ul>
+            <li>Cursos de actualización normativa y técnica.</li>
+            <li>Módulos de reentrenamiento para certificación de competencias.</li>
+            <li>Seguimiento de progreso y evaluación automatizada.</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>💡 ¿Por qué ENTALPIA?</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Característica</th>
+                    <th style="text-align: left;">Beneficio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left;"><strong>Sin Instalación</strong></td>
+                    <td style="text-align: left;">Accede a herramientas pesadas de ingeniería desde una tablet o laptop básica.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;"><strong>Especialización</strong></td>
+                    <td style="text-align: left;">No somos generalistas; somos expertos en la cadena de valor del gas y el fuego.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;"><strong>Todo en Uno</strong></td>
+                    <td style="text-align: left;">Desde el diseño del proyecto hasta la capacitación del personal que lo opera.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;"><strong>Actualización</strong></td>
+                    <td style="text-align: left;">Tus herramientas y normativas siempre están en la última versión disponible.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>🎯 ¿A quién va dirigido?</h2>
+        
+        <ul>
+            <li><strong>Ingenieros Proyectistas:</strong> Que requieren precisión en el dimensionamiento de redes y equipos.</li>
+            <li><strong>Consultores y Auditores:</strong> Que necesitan verificar el cumplimiento normativo en tiempo real.</li>
+            <li><strong>Docentes Freelance:</strong> Que buscan profesionalizar su oferta educativa con recursos visuales y técnicos de alta calidad.</li>
+            <li><strong>Empresas de Servicios Públicos:</strong> Para planes de capacitación continua de su fuerza operativa.</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>🛠️ Stack Tecnológico (Opcional)</h2>
+        
+        <ul>
+            <li><strong>Frontend:</strong> <a href="#">Ej: React / Vue.js</a></li>
+            <li><strong>Backend:</strong> <a href="#">Ej: Python / Node.js para los cálculos complejos</a></li>
+            <li><strong>Simulación:</strong> <a href="#">Ej: WebAssembly para rendimiento nativo en el navegador</a></li>
+        </ul>
+        
+        <hr>
+        
+        <h2>📞 Contacto y Soporte</h2>
+        
+        <p>¿Interesado en una demo o en integrar ENTALPIA en tu institución?</p>
+        
+        <ul>
+            <li>📧 <strong>Email:</strong> <a href="mailto:ingenieriaiacol@gmail.com">ingenieriaiacol@gmail.com</a></li>
+            <li>🌐 <strong>Web:</strong> <a href="https://ingenieria-iacol.github.io/ia" target="_blank">https://ingenieria-iacol.github.io/ia</a></li>
+            <li>💬 <strong>Soporte:</strong> Disponible 24/7 para usuarios premium.</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>? Mas...</h2>
+        
+        <p>La expresión "Enthalpy Pioneer" (o Pionero de la Entalpía) no es un término técnico estándar en los libros de texto, pero se interpreta comúnmente en dos contextos principales según el entorno donde la hayas visto:</p>
+        
+        <ul>
+            <li>
+                <p>1. Interpretación Científica / Histórica</p>
+                <p>Se refiere a los científicos pioneros que definieron y desarrollaron el concepto de entalpía (la cantidad de energía térmica que un sistema intercambia con su entorno).</p>
+                <p>Josiah Willard Gibbs: Fue el primero en utilizar el concepto, aunque lo llamó "función de calor".<br>
+                Heike Kamerlingh Onnes: Fue quien acuñó oficialmente el término "entalpía" a principios del siglo XX.</p>
+            </li>
+            <li>
+                <p>2. Interpretación en Ingeniería y Software</p>
+                <p>En el ámbito de la ingeniería química y de procesos, "Pioneer" suele ser el nombre de marcas o softwares específicos de simulación térmica.<br>
+                Podría referirse a un usuario experto o a un módulo de cálculo que lidera la implementación de nuevas metodologías para medir cambios de energía en sistemas complejos (como en la captura de carbono o nuevas energías).</p>
+            </li>
+            <li>
+                <p>3. Sentido Figurado</p>
+                <p>A veces se usa de forma metafórica para describir a alguien que es un innovador en termodinámica o en procesos de eficiencia energética; alguien que "abre camino" en la forma en que gestionamos el calor y la energía.</p>
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <p>© 2025 ENTALPIA. Todos los derechos reservados. <em>La energía que mueve el conocimiento.</em></p>
+    </div>
+</div>
+
+</body>
+</html>
