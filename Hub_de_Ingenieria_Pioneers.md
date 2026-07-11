@@ -1,5 +1,5 @@
-# Entorno Digital de Alto Rendimiento: Ecosistema Tecnológico Integrado
-Este entorno digital es, en esencia, un **ecosistema tecnológico integrado de alto rendimiento**. No es solo una colección de herramientas sueltas; es una plataforma sinérgica diseñada para centralizar, automatizar y optimizar todo el ciclo de vida de un proyecto de ingeniería.
+# Entorno Digital de Alto Rendimiento: Andamiaje Tecnológico Integrado
+Este entorno digital es, en esencia, un **Andamiaje tecnológico integrado de alto rendimiento**. No es solo una colección de herramientas sueltas; es una plataforma sinérgica diseñada para centralizar, automatizar y optimizar todo el ciclo de vida de un proyecto de ingeniería.
 
 Al estar potenciado por el **Hub de ingeniería Pioneer's** (desarrollado por *Ind. I.A. Col*), este entorno se convierte en el "cerebro operativo" de un ingeniero o equipo de desarrollo.
 
@@ -7,7 +7,7 @@ A continuación, se desglosa qué significa cada componente dentro de este entor
 
 ---
 
-## Componentes del Ecosistema
+## Componentes del andamiaje
 
 ### 1. El Núcleo de Ingeniería y Modeladores
 * **¿Qué es?** Son las herramientas de cálculo, simulación y diseño asistido (CAD/CAE), junto con modeladores de datos o procesos.
